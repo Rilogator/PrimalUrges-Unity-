@@ -6,11 +6,14 @@
 // ----------------------------------------------------------------------------
 
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace RoboRyanTron.Unite2017.Variables
 {
     public class SimpleUnitHealth : MonoBehaviour
     {
+        public Slider hpMeter;
+
         public FloatVariable HP;
 
         public bool ResetHP;
@@ -21,6 +24,8 @@ namespace RoboRyanTron.Unite2017.Variables
         {
             if (ResetHP)
                 HP.SetValue(StartingHP);
+
+            hpMeter.value = HP.Value / StartingHP.Value;
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -29,7 +34,7 @@ namespace RoboRyanTron.Unite2017.Variables
             if (damage != null)
             {
                 HP.ApplyChange(-damage.DamageAmount);
-                Debug.Log("Player health is now " + HP.Value);
+                hpMeter.value = HP.Value / StartingHP.Value;
             }            
         }
     }
