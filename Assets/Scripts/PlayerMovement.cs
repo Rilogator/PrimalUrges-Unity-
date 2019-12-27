@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {   
@@ -13,32 +12,20 @@ public class PlayerMovement : MonoBehaviour
     bool jump = false;
     bool crouch = false;
 
-    // Update is called once per frame
-    void Update()
+    public void OnMove(InputAction.CallbackContext context)
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        horizontalMove = context.ReadValue<Vector2>().x * runSpeed;
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-
-        // Debug.Log(horizontalMove);
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            jump = true;
-            animator.SetBool("isJumping", true);
-        }
-               
-        if (Input.GetButtonDown("Crouch"))
-        {
-            crouch = true;
-        }
-        else if (Input.GetButtonUp("Crouch"))
-        {
-            crouch = false;
-        }
     }
 
-   public void OnLanding ()
+    public void onJump()
+    {
+        jump = true;
+        animator.SetBool("isJumping", true);
+    }
+
+    public void OnLanding ()
     {
         animator.SetBool("isJumping", false);
     }
