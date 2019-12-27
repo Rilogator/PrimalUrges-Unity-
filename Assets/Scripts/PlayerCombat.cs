@@ -14,6 +14,14 @@ public class PlayerCombat : MonoBehaviour
     public float attackRange = 0.5f;
     public int attackDamage = 40;
 
+    private bool canCombo = false;
+
+    private void FixedUpdate()
+    {
+        if(animator.GetCurrentAnimatorStateInfo(0).IsName("Player_jump") || animator.GetCurrentAnimatorStateInfo(0).IsName("Player_fall"))
+            animator.ResetTrigger("Attack");
+    }
+
     public void Attack(InputAction.CallbackContext context)
     {
         if (context.performed)
