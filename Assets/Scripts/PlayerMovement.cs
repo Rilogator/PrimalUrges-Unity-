@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {   
-     public CharacterController2D controller;
+    public CharacterController2D controller;
     public Animator animator;
 
     public float runSpeed = 40f;
@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
+
 
     public void OnMove(InputAction.CallbackContext context)
     {
