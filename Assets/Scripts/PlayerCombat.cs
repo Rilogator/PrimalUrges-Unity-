@@ -14,17 +14,15 @@ public class PlayerCombat : MonoBehaviour
     public float attackRange = 0.5f;
     public int attackDamage = 40;
 
-    private void FixedUpdate()
-    {
-        if(animator.GetCurrentAnimatorStateInfo(0).IsName("Player_jump") ||
-           animator.GetCurrentAnimatorStateInfo(0).IsName("Player_fall"))
-            animator.ResetTrigger("Attack");
-    }
-
     public void Attack(InputAction.CallbackContext context)
     {
         //Play attack animation
-        if (context.performed)            
+        if (context.performed && (animator.GetCurrentAnimatorStateInfo(0).IsName("Player_idle") ||
+                                  animator.GetCurrentAnimatorStateInfo(0).IsName("Player_attack") ||
+                                  animator.GetCurrentAnimatorStateInfo(0).IsName("Player_attack_heavy") ||
+                                  animator.GetCurrentAnimatorStateInfo(0).IsName("Player_run")
+                                  )
+            )
             animator.SetTrigger("Attack");
     }
 
