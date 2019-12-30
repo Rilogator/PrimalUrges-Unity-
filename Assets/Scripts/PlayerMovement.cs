@@ -3,8 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {   
-    // shared namespace for PlayerMovement?
-    public CharacterController2D controller;
+     public CharacterController2D controller;
     public Animator animator;
 
     public float runSpeed = 40f;
@@ -34,7 +33,14 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         // Move our character
-        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Player_idle") ||
+            animator.GetCurrentAnimatorStateInfo(0).IsName("Player_run") ||
+            animator.GetCurrentAnimatorStateInfo(0).IsName("Player_jump") ||
+            animator.GetCurrentAnimatorStateInfo(0).IsName("Player_fall")
+
+            )
+            controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+
         jump = false;
     }
 }
