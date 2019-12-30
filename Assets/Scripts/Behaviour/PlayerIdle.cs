@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerIdle : CharacterStateBase
 {
+    
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -22,5 +23,8 @@ public class PlayerIdle : CharacterStateBase
 
     }
 
-    
+    public void OnJump()
+    {
+        
+    }
 }

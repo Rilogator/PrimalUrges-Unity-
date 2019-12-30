@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class CharacterStateBase : StateMachineBehaviour
 {
-    // A reference to the character's controller
-    private CharacterController2D controller;
+    // References to player interactons
+    private PlayerMovement movement;
+    private PlayerCombat combat;
 
-    // Give this behaviour access to the controller script of our Character
-    public CharacterController2D GetCharacterController(Animator animator)
+    // A way for behaviour scripts to gain access to interaction scripts
+    public PlayerMovement GetCharacterMovement(Animator animator)
     {
-        if (controller == null)
-            controller = animator.GetComponentInParent<CharacterController2D>();
+        if (movement == null)
+            movement = animator.GetComponentInParent<PlayerMovement>();
 
-        return controller;
+        return movement;
+    }
+
+    public PlayerCombat GetCharacterCombat(Animator animator)
+    {
+        if (combat == null)
+            combat = animator.GetComponentInParent<PlayerCombat>();
+
+        return combat;
     }
 }

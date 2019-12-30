@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {   
+    // shared namespace for PlayerMovement?
     public CharacterController2D controller;
     public Animator animator;
 

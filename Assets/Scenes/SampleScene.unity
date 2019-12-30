@@ -1424,6 +1424,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5332333903975670250, guid: a3566fd89f478324996b97e0e078fbe9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332333904478764841, guid: a3566fd89f478324996b97e0e078fbe9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332333904606789159, guid: a3566fd89f478324996b97e0e078fbe9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332333905521263364, guid: a3566fd89f478324996b97e0e078fbe9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 919063261440096461, guid: fbeb7f3f1fe8d314ebb764a1034726cb,
+        type: 2}
+    - target: {fileID: 5332333905521263364, guid: a3566fd89f478324996b97e0e078fbe9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332333905521263364, guid: a3566fd89f478324996b97e0e078fbe9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5332333905521263365, guid: a3566fd89f478324996b97e0e078fbe9,
         type: 3}
       propertyPath: hpMeter
@@ -1488,6 +1519,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332333905521263390, guid: a3566fd89f478324996b97e0e078fbe9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3566fd89f478324996b97e0e078fbe9, type: 3}
