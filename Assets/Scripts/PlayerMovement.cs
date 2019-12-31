@@ -8,16 +8,17 @@ public class PlayerMovement : MonoBehaviour
 
     public float runSpeed = 40f;
 
-    float horizontalMove = 0f;
+    Vector2 moveDirection = Vector2.zero;
     bool jump = false;
     bool crouch = false;
 
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        horizontalMove = context.ReadValue<Vector2>().x * runSpeed;
+        moveDirection = context.ReadValue<Vector2>() * runSpeed;
+        
 
-        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+        animator.SetFloat("Speed", Mathf.Abs(moveDirection.magnitude));
     }
 
     public void OnJump(InputAction.CallbackContext context)
@@ -43,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
             animator.GetCurrentAnimatorStateInfo(0).IsName("Player_fall")
 
             )
-            controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+            controller.Move(moveDirection * Time.fixedDeltaTime, crouch, jump);
 
         jump = false;
     }
