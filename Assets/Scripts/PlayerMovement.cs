@@ -20,10 +20,13 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
     }
 
-    public void onJump()
+    public void OnJump(InputAction.CallbackContext context)
     {
-        jump = true;
-        animator.SetBool("isJumping", true);
+        if (context.performed)
+        {
+            jump = true;
+            animator.SetBool("isJumping", true);
+        }
     }
 
     public void OnLanding ()

@@ -1,5 +1,5 @@
 {
-    "name": "AlphaBlood[2D_Melee]",
+    "name": "InputMaster",
     "maps": [
         {
             "name": "Player",
@@ -272,6 +272,17 @@
                 },
                 {
                     "name": "",
+                    "id": "c95c4266-8703-479a-8b56-ee0c6b0e363f",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "525d9773-3105-4eab-892a-86b762b4c94f",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
@@ -321,6 +332,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d8ce01b1-9108-4cb4-a724-2d6d963f5228",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
