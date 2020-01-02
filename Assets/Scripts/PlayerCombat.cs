@@ -17,12 +17,10 @@ public class PlayerCombat : MonoBehaviour
     public void Attack(InputAction.CallbackContext context)
     {
         //Play attack animation
-        if (context.performed && (animator.GetCurrentAnimatorStateInfo(0).IsName("Player_idle") ||
-                                  animator.GetCurrentAnimatorStateInfo(0).IsName("Player_attack") ||
-                                  animator.GetCurrentAnimatorStateInfo(0).IsName("Player_attack_heavy") ||
-                                  animator.GetCurrentAnimatorStateInfo(0).IsName("Player_run")
-                                  )
-            )
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Player_idle") ||
+            animator.GetCurrentAnimatorStateInfo(0).IsName("Player_attack") ||
+            animator.GetCurrentAnimatorStateInfo(0).IsName("Player_attack_heavy") ||
+            animator.GetCurrentAnimatorStateInfo(0).IsName("Player_run"))
             animator.SetTrigger("Attack");
     }
 
