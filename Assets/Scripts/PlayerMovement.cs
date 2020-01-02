@@ -3,14 +3,14 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {   
-    public CharacterController2D controller;
-    public Animator animator;
+    [SerializeField] private CharacterController2D controller = null;
+    [SerializeField] private Animator animator = null;
 
-    public float runSpeed = 40f;
+    [SerializeField] private float runSpeed = 40f;
 
-    Vector2 moveDirection = Vector2.zero;
-    bool jump = false;
-    bool crouch = false;
+    private Vector2 moveDirection = Vector2.zero;
+    private bool jump = false;
+    private bool crouch = false;
 
     private InputMaster controls = null;
 
@@ -20,23 +20,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDisable() => controls.Player.Disable();
 
-    //public void OnMove(InputAction.CallbackContext context)
-    //{
-    //    moveDirection = context.ReadValue<Vector2>() * runSpeed;        
-
-    //    animator.SetFloat("Speed", Mathf.Abs(moveDirection.magnitude));
-    //}
-
-    //public void OnJump(InputAction.CallbackContext context)
-    //{
-    //        jump = true;
-    //        animator.SetBool("isJumping", true);
-    //}
-
-    public void OnLanding ()
+    public void OnJump()
     {
-        animator.SetBool("isJumping", false);
+        jump = true;
+
+        animator.SetBool("isJumping", true);
     }
+
+    public void OnLanding() => animator.SetBool("isJumping", false);
 
     void FixedUpdate()
     {
@@ -52,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         {
             controller.Move(moveDirection * Time.fixedDeltaTime, crouch, jump);
         }
+
         jump = false;
     }
 }

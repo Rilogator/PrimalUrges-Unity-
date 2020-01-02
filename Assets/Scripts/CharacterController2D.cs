@@ -60,7 +60,6 @@ public class CharacterController2D : MonoBehaviour
 		}
 	}
 
-
 	public void Move(Vector2 move, bool crouch, bool jump)
 	{
 		// If crouching, check to see if the character can stand up
@@ -107,7 +106,7 @@ public class CharacterController2D : MonoBehaviour
 			}
 
 			// Move the character by finding the target velocity
-			Vector3 targetVelocity = new Vector2(move.x * 10, move.y * 5.5f);
+			Vector3 targetVelocity = new Vector2(move.x * 10f, move.y * 5.5f);
 			// And then smoothing it out and applying it to the character
 			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
@@ -124,6 +123,7 @@ public class CharacterController2D : MonoBehaviour
 				Flip();
 			}
 		}
+
 		// If the player should jump...
 		if (m_Grounded && jump)
 		{
@@ -132,7 +132,6 @@ public class CharacterController2D : MonoBehaviour
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 		}
 	}
-
 
 	private void Flip()
 	{
