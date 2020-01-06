@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5332333904478764841}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.55, y: 0, z: 0}
+  m_LocalPosition: {x: 0.448, y: 0.632, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5332333905521263388}
@@ -216,8 +216,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.09118676}
-  m_Size: {x: 0.40220165, y: 0.90761364}
+  m_Offset: {x: 0, y: 0.33745873}
+  m_Size: {x: 0.40220165, y: 0.5325489}
   m_Direction: 0
 --- !u!95 &5332333905521263367
 Animator:
@@ -368,18 +368,7 @@ MonoBehaviour:
     m_ActionId: 39093486-ec29-44c1-8a9b-f29b821e6dac
     m_ActionName: UI/TrackedDeviceSelect
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5332333905521263362}
-        m_MethodName: OnJump
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 70152a6a-f5f8-4b6b-9720-8afe7b9cbdb4
     m_ActionName: Player/New action
   m_NeverAutoSwitchControlSchemes: 0

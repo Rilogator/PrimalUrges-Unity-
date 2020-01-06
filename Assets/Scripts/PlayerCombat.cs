@@ -19,9 +19,8 @@ public class PlayerCombat : MonoBehaviour
         //Play attack animation
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Player_idle") ||
             animator.GetCurrentAnimatorStateInfo(0).IsName("Player_attack") ||
-            animator.GetCurrentAnimatorStateInfo(0).IsName("Player_attack_heavy") ||
-            animator.GetCurrentAnimatorStateInfo(0).IsName("Player_run"))
-            animator.SetTrigger("Attack");
+            animator.GetCurrentAnimatorStateInfo(0).IsName("Player_attack_heavy"))
+                animator.SetTrigger("Attack");
     }
 
     public void Damage(float damage)
@@ -34,7 +33,7 @@ public class PlayerCombat : MonoBehaviour
         // Damage them
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
         }
     }
 
