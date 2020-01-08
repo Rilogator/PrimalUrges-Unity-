@@ -36,10 +36,8 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(moveDirection.magnitude));
 
         // Move our character
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Player_idle") ||
-            animator.GetCurrentAnimatorStateInfo(0).IsName("Player_run") ||
-            animator.GetCurrentAnimatorStateInfo(0).IsName("Player_jump") ||
-            animator.GetCurrentAnimatorStateInfo(0).IsName("Player_fall"))
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") ||
+            animator.GetCurrentAnimatorStateInfo(0).IsName("Run"))
         {
             controller.Move(moveDirection * Time.fixedDeltaTime, crouch, jump);
         }

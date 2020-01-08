@@ -17,9 +17,7 @@ public class PlayerCombat : MonoBehaviour
     public void Attack(InputAction.CallbackContext context)
     {
         //Play attack animation
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Player_idle") ||
-            animator.GetCurrentAnimatorStateInfo(0).IsName("Player_attack") ||
-            animator.GetCurrentAnimatorStateInfo(0).IsName("Player_attack_heavy"))
+        if (animator.GetCurrentAnimatorStateInfo(0).IsTag("Attackable"))
                 animator.SetTrigger("Attack");
     }
 
