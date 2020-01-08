@@ -8,7 +8,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float speed = 200f;
     [SerializeField] private float nextWaypointDistance = 3f;
 
-    [SerializeField] private Transform enemyGFX;
+    [SerializeField] private Transform enemyGFX = null;
 
     Path path;
     int currentWaypoint = 0;
